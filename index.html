@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon site — Accueil</title>
+  <meta name="description" content="Page d'accueil classique — modèle HTML5 simple">
+  <!-- Fichier CSS externe recommandé : styles.css -->
+  <style>
+    /* CSS minimal intégré pour prototype — déplacer dans styles.css si besoin */
+    :root{--bg:#f7f7f7;--card:#ffffff;--accent:#0d6efd;--text:#222}
+    *{box-sizing:border-box}
+    body{font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.6;margin:0;background:var(--bg);color:var(--text)}
+    .container{max-width:1000px;margin:0 auto;padding:1rem}
+    header{background:var(--card);border-bottom:1px solid #e6e6e6}
+    .brand{display:flex;align-items:center;gap:.75rem;padding:.75rem 0}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem}
+    a{color:inherit;text-decoration:none}
+    .hero{padding:2rem 0}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+    article{background:var(--card);padding:1rem;border-radius:8px}
+    aside{background:var(--card);padding:1rem;border-radius:8px}
+    footer{padding:1rem 0;text-align:center;font-size:.9rem;color:#666}
+    @media (max-width:720px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <img src="" alt="Logo" width="40" height="40" aria-hidden="true">
+        <h1 style="font-size:1.1rem;margin:0">Mon site</h1>
+        <nav style="margin-left:auto" aria-label="Navigation principale">
+          <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Bienvenue — modèle d'index.html classique</h2>
+      <p>Ce modèle inclut une structure sémantique HTML5, du CSS minimal intégré et un petit script en bas de page.</p>
+    </section>
+
+    <div class="grid">
+      <article>
+        <h3>Article principal</h3>
+        <p>Voici le contenu principal. Remplacez ce texte par vos propres sections, articles, images et composants.</p>
+        <h4 id="about">À propos</h4>
+        <p>Texte de présentation, mission, informations de l'entreprise ou biographie.</p>
+      </article>
+
+      <aside>
+        <h4>Sidebar</h4>
+        <p>Liens rapides, petites infos, ou widgets.</p>
+      </aside>
+    </div>
+
+    <section id="contact" style="margin-top:1rem">
+      <h3>Contact</h3>
+      <form>
+        <label for="name">Nom</label><br>
+        <input id="name" name="name" type="text" required style="width:100%;padding:.5rem;margin:.25rem 0"><br>
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="4" style="width:100%;padding:.5rem;margin:.25rem 0"></textarea><br>
+        <button type="submit" style="padding:.5rem 1rem;background:var(--accent);color:#fff;border:none;border-radius:6px">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mon site — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script>
+    // JS minimal : insère l'année courante et gère un comportement basique
+    document.addEventListener('DOMContentLoaded', function(){
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Exemple : soumission de formulaire (prévenir rechargement pour prototype)
+      var form = document.querySelector('form');
+      if(form){
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          alert('Merci — le formulaire a été (simulé) envoyé.');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
